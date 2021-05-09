@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+/* font-family: 'Itim', cursive; */
+
+html, body {height:100%;}
+#wrap {width:400%; height:100%; overflow-y:hidden;}
+article {height:100vh; width:25%; float:left;}
+
+
+/* article1 */
+.article1 {position:relative;}
+.article1 .text {
+    font-family: 'Itim', cursive;
+    margin:40px 0 0 50px;
+    font-size:120px; letter-spacing:-0.05em;
+    line-height:0.8;
+}
+.article1 .text span {color:#ffce09;}
+.article1 .text p:nth-of-type(4) { font-family:unset;
+    font-size:40px; letter-spacing:-0.03em; margin:20px 0;
+}
+.article1 > p { z-index:999;
+    position:absolute; left:50%; top:60%;
+    background:#000; color:#ffce09;
+    padding:13px 30px; font-size:40px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing:0em; transform:rotate(-30deg);
+}
+.article1 img:nth-of-type(1) {
+    position:absolute; top:50%; left:55%;
+    transform:translate(-50%, -50%); width:450px;
+    animation: skate 10s infinite 3s linear;
+}
+/* .article1 img:nth-of-type(1) {
+    position:absolute; top:50%; left:100%;
+    transform:translate(0%, -50%); width:450px;
+    animation: skate 4s infinite linear;
+} */
+/* @keyframes skate {
+    0% {left:100%;}
+    100% {left:-20%;}
+} */
+/* .article1 img:nth-of-type(1) {
+    position:absolute; width:450px;
+    animation: skate 10s infinite linear;
+}*/
+ @keyframes skate {
+    0% {top:-10%; left:100%;transform:scale(0.5) rotate(0);}
+    20% {top:-10%; left:-20%;transform:scale(0.5) rotate(0);}
+    40% {top:20%; left:-20%;transform:scale(1) rotateY(150deg);}
+    60% {top:20%; left:105%;transform:scale(1) rotateY(150deg);}
+    80% {top:50%; left:105%;transform:scale(1.5) rotate(0);}
+    100% {top:50%; left:-20%;transform:scale(1.5) rotate(0);}
+} 
+/* .article1 img:nth-of-type(1) {
+    position:absolute; width:450px;
+    animation: skate 10s infinite linear;
+}*/
+/* @keyframes skate {
+    0% {top:90%; left:100%;transform:scale(0.2) rotate(0deg);}
+    30% {top:90%; left:0%;transform:scale(0.2) rotate(90deg);}
+    60% {top:0%; left:0%;transform:scale(0.2) rotateY(180deg);}
+    90% {top:0%; left:90%;transform:scale(0.2) rotate(270deg);}
+    100% {top:90%; left:90%;transform:scale(0.2) rotate(360deg);}
+} */
+
+
+.article1 img:nth-of-type(2) {
+    position:absolute; bottom:17px; 
+    width:150px; animation:mini 1s infinite;
+}
+@keyframes mini {
+    0% {right:-10px;}
+    50% {right:0px;}
+    100% {right:-10px;}
+}
+.article1 .audio { position:relative;
+    position:absolute; top:70px; right:50px;
+}
+.article1 .audio > button {display:none;
+    font-family: 'Ubuntu', sans-serif; cursor:pointer;
+    font-size:17px; border:none; background:none;
+}
+.article1 .audio > button > i {margin-right:10px;}
+.article1 .audio > button.on {display:block;}
+
+
+
+/* article2 */
+.article2 {color:#fff; background:#000; position:relative;}
+.article2 .title {position:relative;}
+.article2 h2 { letter-spacing:-0.02em;
+    margin:20px 0 0 50px; font-size:150px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.article2 .title img {
+    position:absolute; top:0; left:600px
+}
+.article2 .title img:nth-of-type(1) {width:250px;}
+.article2 .title img:nth-of-type(2) {
+    transform-origin: 0% 100% ;
+    transition: 1.4s;
+}
+.article2 .title.on img:nth-of-type(2){
+    transform: rotate(115deg);
+    transition: 1.4s cubic-bezier(.52, 2.3, .55, .52);
+}
+
+.article2 .profile {
+    position:absolute; left:100px; bottom:30px;
+    color:#fff; font-family: 'Ubuntu', sans-serif;
+    font-size:20px;
+}
+.article2 .profile > div {margin-bottom:70px;}
+.article2 .profile > div > p:nth-child(1) {font-size:50px; margin-bottom:10px;}
+
+.article2 .chart-container { position:relative;
+    width:1000px; height:800px; opacity:0;
+    position:absolute; bottom:-860px; right:205px;
+    transition:all 1s;
+}
+.article2 .chart-container.on {bottom:-100px; opacity:1;}
+.article2 .chart-container .line-chart {font-size: 20px;}
+.article2 .yellowBox {
+    position:absolute; bottom:0; right:0;
+    width:220px; height:540px;
+    background:#ffce09;
+    border-radius:65px 0 0 0;
+}
+.article2 > img { width:150px;
+    position:absolute; right:-1px; bottom:540px;
+    animation:mini 1s infinite;
+}
+.article2 .chart-container .skill {
+    position:absolute; bottom:130px; left:65px;
+    text-align:center; display:flex;
+    justify-content:space-around;
+    color:#000; font-size:20px;
+}
+.article2 .chart-container .skill > p {margin-right:67px;}
+.article2 .chart-container .skill > p:nth-child(3) {margin-right:58px;}
+.article2 .chart-container .skill > p:nth-child(7) {margin:-10px 0 0 -40px;}
+
+
+
+/* article3 */
+.article3 {
+    overflow:hidden; display:flex;
+    justify-content:center; position:relative;
+    font-family: 'Ubuntu', sans-serif;
+}
+.article3 > div > div {
+    width:1000px; height:700px; position: relative;
+    transform:rotateX(70deg) rotate(-50deg);
+    border:1px solid #000; top:30%;
+    transform-style: preserve-3d; cursor:pointer;
+}
+.article3 .web .floor_1 {
+    background-color:red; width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+.article3 .web .floor_1:hover {top:200px;}
+.article3 .web .floor_2 {
+    background-color:blue; width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+.article3 .web .floor_2:hover {top:200px;}
+.article3 .web .floor_3 {
+    background-color:yellow; width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+.article3 .web .floor_3:hover {top:200px;}
+.article3 .web .floor_4 {
+    color:#fff; font-size:80px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,0.8); width:1000px; height:700px; 
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+.article3 > img {
+    position:absolute; bottom:17px; right:0;
+    width:150px; animation:mini 1s infinite;
+}
+
+
+
+
+
+/* article4 */
+.article4 {background:#000; font-family: 'Ubuntu', sans-serif;
+    display:flex; justify-content:space-between;}
+.article4 .miro {width:50%; position:relative; text-align:center;}
+.article4 .miro > img:nth-of-type(1) {width:80%; margin-left:200px;}
+.article4 .miro > img:nth-of-type(2) {
+    width:90px; position:absolute; left:50px; top:30px;
+    transform:rotateY(150deg);
+}
+.article4 .miro > i {
+    color:#fff; font-size:30px;
+    animation:bounce 1s infinite;
+    cursor:pointer; display:none;
+}
+.article4 .miro > i.on {display:block;}
+.article4 .miro label { 
+    color:#fff; font-size:30px; cursor:pointer;
+    animation:bounce 1s infinite; display:none;
+    font-family: 'Ubuntu', sans-serif;
+}
+.article4 .miro > label.on {display:block;}
+
+.article4 .miro > i:nth-of-type(1) {
+    position:absolute; top:70px; left:285px;
+}
+.article4 .miro > label:nth-of-type(1) {
+    position:absolute; bottom:100px; left:60px;
+}
+.article4 .miro > i:nth-of-type(2) {
+    position:absolute; bottom:280px; left:290px;
+}
+.article4 .miro > label:nth-of-type(2) {
+    position:absolute; bottom:100px; right:240px;
+}
+.article4 .miro > i:nth-of-type(3) {
+    position:absolute; bottom:280px; left:480px;
+}
+.article4 .miro > label:nth-of-type(3) {
+    position:absolute; top:70px; right:240px;
+}
+.article4 .miro > i:nth-of-type(4) {
+    position:absolute; top:250px; right:80px;
+}
+.article4 .miro > label:nth-of-type(4) {
+    position:absolute; top:70px; right:-160px;
+}
+
+.article4 .contact { position:relative;
+    background:#ffce09; padding:50px 40px;
+    width:40%; height:100vh; font-size:20px;
+}
+.article4 .contact h2 {font-size:50px; margin-bottom:50px;}
+.article4 .contact form {margin-left:20px;}
+.article4 .contact form input,
+.article4 .contact form #memo {
+    display:block; margin:10px 0 20px;
+    font-size:17px; padding:10px; border:none;
+    background:none; width:70%;
+}
+.article4 .contact form button {
+    position:absolute; bottom:50px; left:-130px;
+    color:#fff; font-size:30px; cursor:pointer;
+    border:none; background:none;
+}
+
+
+
+
