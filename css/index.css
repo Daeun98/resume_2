@@ -4,9 +4,10 @@
 /* font-family: 'Itim', cursive; */
 
 html, body {height:100%;}
-#wrap {width:400%; height:100%; overflow-y:hidden;}
-article {height:100vh; width:25%; float:left;}
-
+#wrap {width:385%; height:100%; overflow-y:hidden; display: flex;}
+article {height:100vh; float:left;}
+.article1, .article2, .article3 {flex: 1;}
+.article4 {flex:0.85;}
 
 /* article1 */
 .article1 {position:relative;}
@@ -104,7 +105,7 @@ article {height:100vh; width:25%; float:left;}
 }
 .article2 .title.on img:nth-of-type(2){
     transform: rotate(115deg);
-    transition: 1.4s cubic-bezier(.52, 2.3, .55, .52);
+    transition: 1.4s cubic-bezier(.52, 2.3, .55, .52) 0.5s;
 }
 
 .article2 .profile {
@@ -118,7 +119,7 @@ article {height:100vh; width:25%; float:left;}
 .article2 .chart-container { position:relative;
     width:1000px; height:800px; opacity:0;
     position:absolute; bottom:-860px; right:205px;
-    transition:all 1s;
+    transition:all 1s 0.5s;
 }
 .article2 .chart-container.on {bottom:-100px; opacity:1;}
 .article2 .chart-container .line-chart {font-size: 20px;}
@@ -137,10 +138,11 @@ article {height:100vh; width:25%; float:left;}
     text-align:center; display:flex;
     justify-content:space-around;
     color:#000; font-size:20px;
+    font-family: 'Ubuntu', sans-serif;
 }
-.article2 .chart-container .skill > p {margin-right:67px;}
-.article2 .chart-container .skill > p:nth-child(3) {margin-right:58px;}
-.article2 .chart-container .skill > p:nth-child(7) {margin:-10px 0 0 -40px;}
+.article2 .chart-container .skill > p {margin-right:67px; line-height:1.3 em;}
+.article2 .chart-container .skill > p:nth-child(3) {margin:0 48px 0 -10px;}
+.article2 .chart-container .skill > p:nth-child(6) {margin:0 35px 0 -10px;}
 
 
 
@@ -157,27 +159,42 @@ article {height:100vh; width:25%; float:left;}
     transform-style: preserve-3d; cursor:pointer;
 }
 .article3 .web .floor_1 {
-    background-color:red; width:1000px; height:700px;
+    background:url(../images/web_1.PNG) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
     position: absolute; top: 0; left: 0;
     transform:translate3d(0px, 0px, 0px);
     transition:all 0.3s;
 }
 .article3 .web .floor_1:hover {top:200px;}
 .article3 .web .floor_2 {
-    background-color:blue; width:1000px; height:700px;
+    background:url(../images/web_2.PNG) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
     position: absolute; top: 0; left: 0;
     transform:translate3d(0px, 0px, 0px);
     transition:all 0.3s;
 }
 .article3 .web .floor_2:hover {top:200px;}
 .article3 .web .floor_3 {
-    background-color:yellow; width:1000px; height:700px;
+    background:url(../images/web_3.PNG) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
     position: absolute; top: 0; left: 0;
     transform:translate3d(0px, 0px, 0px);
     transition:all 0.3s;
 }
 .article3 .web .floor_3:hover {top:200px;}
 .article3 .web .floor_4 {
+    background:url(../images/web_4.PNG) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+.article3 .web .floor_4:hover {top:200px;}
+.article3 .web .floor_5 {
     color:#fff; font-size:80px;
     display:flex; align-items:center; justify-content:center;
     background:rgba(0,0,0,0.8); width:1000px; height:700px; 
@@ -196,11 +213,11 @@ article {height:100vh; width:25%; float:left;}
 /* article4 */
 .article4 {background:#000; font-family: 'Ubuntu', sans-serif;
     display:flex; justify-content:space-between;}
-.article4 .miro {width:50%; position:relative; text-align:center;}
-.article4 .miro > img:nth-of-type(1) {width:80%; margin-left:200px;}
-.article4 .miro > img:nth-of-type(2) {
+.article4 .miro {width:60%; position:relative; text-align:center;}
+.article4 .miro > img:nth-of-type(1) {width:79%; margin-left:165px;}
+.article4 .miro > .girl {
     width:90px; position:absolute; left:50px; top:30px;
-    transform:rotateY(150deg);
+    transform:rotateY(150deg); transition:all 1.5s linear
 }
 .article4 .miro > i {
     color:#fff; font-size:30px;
@@ -216,33 +233,33 @@ article {height:100vh; width:25%; float:left;}
 .article4 .miro > label.on {display:block;}
 
 .article4 .miro > i:nth-of-type(1) {
-    position:absolute; top:70px; left:285px;
+    position:absolute; top:80px; left:265px;
 }
 .article4 .miro > label:nth-of-type(1) {
-    position:absolute; bottom:100px; left:60px;
+    position:absolute; bottom:70px; left:50px;
 }
 .article4 .miro > i:nth-of-type(2) {
-    position:absolute; bottom:280px; left:290px;
+    position:absolute; bottom:270px; left:275px;
 }
 .article4 .miro > label:nth-of-type(2) {
-    position:absolute; bottom:100px; right:240px;
+    position:absolute; bottom:70px; right:270px;
 }
 .article4 .miro > i:nth-of-type(3) {
-    position:absolute; bottom:280px; left:480px;
+    position:absolute; bottom:290px; left:470px;
 }
 .article4 .miro > label:nth-of-type(3) {
-    position:absolute; top:70px; right:240px;
+    position:absolute; top:70px; right:270px;
 }
 .article4 .miro > i:nth-of-type(4) {
-    position:absolute; top:250px; right:80px;
+    position:absolute; top:260px; right:110px;
 }
 .article4 .miro > label:nth-of-type(4) {
-    position:absolute; top:70px; right:-160px;
+    position:absolute; top:70px; right:-130px;
 }
 
 .article4 .contact { position:relative;
     background:#ffce09; padding:50px 40px;
-    width:40%; height:100vh; font-size:20px;
+    width:30%; height:100vh; font-size:20px;
 }
 .article4 .contact h2 {font-size:50px; margin-bottom:50px;}
 .article4 .contact form {margin-left:20px;}
@@ -250,7 +267,7 @@ article {height:100vh; width:25%; float:left;}
 .article4 .contact form #memo {
     display:block; margin:10px 0 20px;
     font-size:17px; padding:10px; border:none;
-    background:none; width:70%;
+    background:none; width:90%;
 }
 .article4 .contact form button {
     position:absolute; bottom:50px; left:-130px;
@@ -260,4 +277,4 @@ article {height:100vh; width:25%; float:left;}
 
 
 
-
+.next { cursor:pointer }
