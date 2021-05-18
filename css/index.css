@@ -158,6 +158,10 @@ article {height:100vh; float:left;}
     border:1px solid #000; top:30%;
     transform-style: preserve-3d; cursor:pointer;
 }
+.article3 .web > div > a {
+    display:block; text-indent:-999999px; overflow: hidden;
+    height:100%;
+}
 .article3 .web .floor_1 {
     background:url(../images/web_1.PNG) no-repeat center;
     background-size:cover;
