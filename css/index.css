@@ -210,6 +210,13 @@ article {height:100vh; float:left;}
     width:150px; animation:mini 1s infinite;
 }
 
+.article3 .design .floor_4 {
+    color:#fff; font-size:80px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,0.8); width:1000px; height:700px; 
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
 
 
 
