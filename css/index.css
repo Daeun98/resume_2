@@ -152,7 +152,8 @@ article {height:100vh; float:left;}
     justify-content:center; position:relative;
     font-family: 'Ubuntu', sans-serif;
 }
-.article3 > div > div {
+.article3 .web,
+.article3 .design {
     width:1000px; height:700px; position: relative;
     transform:rotateX(70deg) rotate(-50deg);
     border:1px solid #000; top:30%;
@@ -216,6 +217,29 @@ article {height:100vh; float:left;}
     background:rgba(0,0,0,0.8); width:1000px; height:700px; 
     transform:translate3d(0px, 0px, 0px);
     transition:all 0.3s;
+}
+.article3 .right #modal {position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,0.6);
+    z-index:999999; display: none;}
+/* #modal:target {display:block;} */
+.article3 .right #modal.on {display: block;}
+#modal > p {color:#fff; font-size:50px; text-align:    right;}
+#modal .inner {position:absolute;
+    top:50%;  left:50%; transform:translate(-50%,-50%);
+    background: #fff; width:1500px; height:800px; padding:50px;
+    display:flex; align-items:center;
+}
+#modal .inner .title > li > a {
+    margin:20px 100px 20px 0; display:inline-block;
+}
+#modal .inner .title > li.on {color:red;}
+
+#modal .inner .cont > img {
+    float:left; width:25%; padding:10px;
+}
+#modal .inner .cont img.active {
+    animation:zoomIn 0.5s both;
 }
 
 

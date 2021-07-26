@@ -117,6 +117,116 @@ $('.article3 .web .floor_1').hover(
 );
 
 
+$('.article3 .design .floor_4').on('click', function(){
+    $('.article3 .right #modal').addClass('on')
+})
+
+$('#modal > p').on('click', function(){
+    $('.article3 .right #modal').removeClass('on')
+})
+
+var href;
+$('.inner .title > li > a').on('click', function(e){
+    e.preventDefault()
+    $(this).parent().addClass('on').siblings().removeClass('on')
+    href = $(this).attr('href')
+    $('.cont img').each(function(){
+        if($(this).hasClass(href)) {
+            $(this).css({ display:'block' })
+            $(this).addClass('active')
+        } else {
+            $(this).removeClass('active').css({ display:'none'})
+        }
+    })
+})
+
+// var elLia = document.querySelectorAll('.inner .title > li > a')
+// var elImg = document.querySelectorAll('.cont > img')
+
+// for (var i=0; i<elLia.length; i++) { 
+//     elLia[i].addEventListener('click', function(e){
+//         e.preventDefault() // 기본 href 기능 막으려고
+//         var href = this.getAttribute('href')
+//         filter(href)
+//     })
+// }
+// function filter(type){
+//     for(var j=0; j<elImg.length; j++) {   //for문은 이미지 갯수만큼 반복해서 돌리려고 하나하나 조사
+//         if (elImg[j].classList.contains(type)) {
+//             elImg[j].style.display = 'block'
+//             elImg[j].classList.add('active')
+//         } else {
+//             elImg[j].classList.remove('active')
+//             elImg[j].style.display = 'none'
+//         }
+//     }
+// }
+
+var imgnum;
+$('.cont img').on('click', function(e){
+    e.preventDefault()
+    imgnum = $(this).index()
+    var src = $(this).attr('src')
+    var alt = $(this).attr('alt')
+    $('body').append('<div class="outbox"><div class="inbox"></div></div>')
+    $('.outbox').css({
+        position:'fixed', top:0, left:0, right:0, bottom:0,
+        zIndex:'999999', background:'rgba(0,0,0,0.8)'
+    })
+    $('.inbox').css({
+        position:'absolute', top:'50%', left:'50%',
+        transform:'translate(-50%,-50%)',
+    })
+    .append(`<img src="${src}" alt="${alt}"></a>`)
+    .append('<button class="close"><i class="fas fa-times-circle"></i></button>')
+    .append('<button class="arrow prev"><i class="fas fa-angle-left"></i></button><button class="arrow next"><i class="fas fa-angle-right"></i></button>')
+    $('.inbox .close').css({
+        position:'absolute', top:'-20px', right:'-20px',
+        background:'none', border:'none', fontSize:'40px', color:'#fff'
+    })
+    $('.inbox .prev').css({
+        position:'absolute', top:'50%', left:'50%', marginLeft:'-330px', marginTop:'-20px',
+        background:'none', border:'none', fontSize:'40px', color:'#fff'
+    })
+    $('.inbox .next').css({
+        position:'absolute', top:'50%', right:'50%', marginRight:'-330px', marginTop:'-20px',
+        background:'none', border:'none', fontSize:'40px', color:'#fff'
+    })
+})
+
+$('body').on('click', '.inbox .close, .outbox', function(){
+    $('.outbox').remove()
+})
+$('body').on('click', '.inbox', function(e){
+    e.stopPropagation()
+})
+
+function cont (indexnum){
+    var src = $('.cont img').eq(indexnum).attr('src')
+    var alt = $('.cont img').eq(indexnum).attr('alt')
+    $('.inbox').find('a').attr({href:href})
+    $('.inbox').find('img').attr({
+        src:src,
+        alt:alt
+    })
+}
+
+$('body').on('click', '.inbox .next', function(){
+    imgnum++
+    if (imgnum === $('.cont img').length) {
+        imgnum = 0
+    }
+    cont(imgnum)
+})
+
+$('body').on('click', '.inbox .prev', function(){
+    imgnum--
+    if (imgnum<0) {
+        imgnum = 7
+    }
+    cont(imgnum)
+})
+
 
 // 미로
 $('.article4 .miro > label').on('click', function(){
@@ -148,6 +258,10 @@ $('.article4 .miro > label:nth-of-type(4)').on('click', function(){
         left:'1000px', top:'50px', 
         transition:'all 0.7s linear'
     })
+})
+
+$('.article4 .miro > i').on('click', function(){
+    alert("다른 길을 찾아봐 주세요!")
 })
 
 
