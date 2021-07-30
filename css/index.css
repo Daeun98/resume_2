@@ -31,7 +31,7 @@ article {height:100vh; float:left;}
 .article1 img:nth-of-type(1) {
     position:absolute; top:50%; left:55%;
     transform:translate(-50%, -50%); width:450px;
-    animation: skate 10s infinite 3s linear;
+    animation: skate 10s infinite 1.3s linear;
 }
 /* .article1 img:nth-of-type(1) {
     position:absolute; top:50%; left:100%;
@@ -206,6 +206,15 @@ article {height:100vh; float:left;}
     transform:translate3d(0px, 0px, 0px);
     transition:all 0.3s;
 }
+
+.article3 .textBox > div {width:550px; height:200px; animation:fadeInUp 0.2s both;
+    position:absolute; top:15%; left:60%; display:none;
+}
+.article3 .textBox > div > p:first-child {font-size:50px; color:#ffce09;
+    margin-bottom:10px; border-bottom:1px solid #ffce09; padding-bottom:10px;}
+.article3 .textBox > div > p:first-child > span {font-size:30px;}
+.article3 .textBox > div > p:last-child {font-size:16px; line-height:1.5;}
+
 .article3 > img {
     position:absolute; bottom:17px; right:0;
     width:150px; animation:mini 1s infinite;
@@ -218,25 +227,56 @@ article {height:100vh; float:left;}
     transform:translate3d(0px, 0px, 0px);
     transition:all 0.3s;
 }
+.article3 .design .Dfloor_1 {
+    background:url(../images/chupachupps2.png) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+.article3 .design .Dfloor_2 {
+    background:url(../images/jol_22.png) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}.article3 .design .Dfloor_3 {
+    background:url(../images/book2.png) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}.article3 .design .Dfloor_4 {
+    background:url(../images/cherry2.png) no-repeat center;
+    background-size:cover;
+    width:1000px; height:700px;
+    position: absolute; top: 0; left: 0;
+    transform:translate3d(0px, 0px, 0px);
+    transition:all 0.3s;
+}
+
 .article3 .right #modal {position:fixed;
     top:0; left:0; right:0; bottom:0;
     background:rgba(0,0,0,0.6);
     z-index:999999; display: none;}
 /* #modal:target {display:block;} */
 .article3 .right #modal.on {display: block;}
-#modal > p {color:#fff; font-size:50px; text-align:    right;}
+#modal > p {color:#fff; font-size:50px; text-align:right; margin:40px 150px 0 0; cursor:pointer;}
 #modal .inner {position:absolute;
     top:50%;  left:50%; transform:translate(-50%,-50%);
-    background: #fff; width:1500px; height:800px; padding:50px;
+    background:rgba(255,255,255,0.8); width:1500px; height:800px; padding:50px;
     display:flex; align-items:center;
 }
 #modal .inner .title > li > a {
-    margin:20px 100px 20px 0; display:inline-block;
+    margin:20px 100px 20px 0; display:inline-block; font-size:20px;
 }
-#modal .inner .title > li.on {color:red;}
+#modal .inner .title > li.on {font-size:40px; font-weight:bold; color: sandybrown;}
 
 #modal .inner .cont > img {
-    float:left; width:25%; padding:10px;
+    float:left; width:25%; padding:10px; cursor:pointer;
 }
 #modal .inner .cont img.active {
     animation:zoomIn 0.5s both;

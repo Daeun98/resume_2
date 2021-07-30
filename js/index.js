@@ -89,22 +89,31 @@ $('.article3 .web .floor_4').hover(
     function() {
         $(this).next().css({transform:'translate3d(0px, 0px, 450px)'})
         $(this).css({transform:'translate3d(0px, 0px, 200px)'})
+        $('.article3 .textBox .nike').css({display:'block'})
     },
-    function() {}
+    function() {
+        $('.article3 .textBox .nike').css({display:'none'})
+    }
 );
 $('.article3 .web .floor_3').hover(
     function() {
         $(this).next().css({transform:'translate3d(0px, 0px, 400px)'})
         $(this).css({transform:'translate3d(0px, 0px, 150px)'})
+        $('.article3 .textBox .bin').css({display:'block'})
     },
-    function() {}
+    function() {
+        $('.article3 .textBox .bin').css({display:'none'})
+    }
 );
 $('.article3 .web .floor_2').hover(
     function() {
         $(this).next().css({transform:'translate3d(0px, 0px, 350px)'})
         $(this).css({transform:'translate3d(0px, 0px, 100px)'})
+        $('.article3 .textBox .sample').css({display:'block'})
     },
-    function() {}
+    function() {
+        $('.article3 .textBox .sample').css({display:'none'})
+    }
 );
 $('.article3 .web .floor_1').hover(
     function() {
@@ -112,12 +121,31 @@ $('.article3 .web .floor_1').hover(
         $(this).next().next().next().css({transform:'translate3d(0px, 0px, 400px)'})
         $(this).next().next().css({transform:'translate3d(0px, 0px, 350px)'})
         $(this).next().css({transform:'translate3d(0px, 0px, 300px)'})
+        $('.article3 .textBox .renewal').css({display:'block'})
     },
-    function() {}
+    function() {
+        $('.article3 .textBox .renewal').css({display:'none'})
+    }
 );
 
+$('.article3 .design').hover(
+    function() {
+        $('.article3 .design .Dfloor_1').css({transform:'translate3d(0px, 0px, 50px)'})
+        $('.article3 .design .Dfloor_2').css({transform:'translate3d(0px, 0px, 100px)'})
+        $('.article3 .design .Dfloor_3').css({transform:'translate3d(0px, 0px, 150px)'})
+        $('.article3 .design .Dfloor_4').css({transform:'translate3d(0px, 0px, 200px)'})
+        $('.article3 .design .floor_4').css({transform:'translate3d(0px, 0px, 250px)'})
+    },
+    function() {
+        $('.article3 .design .Dfloor_1').css({transform:'translate3d(0px, 0px, 0px)'})
+        $('.article3 .design .Dfloor_2').css({transform:'translate3d(0px, 0px, 0px)'})
+        $('.article3 .design .Dfloor_3').css({transform:'translate3d(0px, 0px, 0px)'})
+        $('.article3 .design .Dfloor_4').css({transform:'translate3d(0px, 0px, 0px)'})
+        $('.article3 .design .floor_4').css({transform:'translate3d(0px, 0px, 0px)'})
+    }
+);
 
-$('.article3 .design .floor_4').on('click', function(){
+$('.article3 .design').on('click', function(){
     $('.article3 .right #modal').addClass('on')
 })
 
@@ -125,11 +153,17 @@ $('#modal > p').on('click', function(){
     $('.article3 .right #modal').removeClass('on')
 })
 
+var cflag = false;
 var href;
 $('.inner .title > li > a').on('click', function(e){
     e.preventDefault()
     $(this).parent().addClass('on').siblings().removeClass('on')
     href = $(this).attr('href')
+    if ( href === 'all') {     
+        cflag = false
+    } else {
+        cflag = true
+    }
     $('.cont img').each(function(){
         if($(this).hasClass(href)) {
             $(this).css({ display:'block' })
@@ -138,6 +172,7 @@ $('.inner .title > li > a').on('click', function(e){
             $(this).removeClass('active').css({ display:'none'})
         }
     })
+    
 })
 
 // var elLia = document.querySelectorAll('.inner .title > li > a')
@@ -163,9 +198,14 @@ $('.inner .title > li > a').on('click', function(e){
 // }
 
 var imgnum;
+var cname;
 $('.cont img').on('click', function(e){
     e.preventDefault()
     imgnum = $(this).index()
+    cname = $(this).attr('class')
+    cname = cname.substr(4,1)
+    console.log(cname)
+   
     var src = $(this).attr('src')
     var alt = $(this).attr('alt')
     $('body').append('<div class="outbox"><div class="inbox"></div></div>')
@@ -178,19 +218,19 @@ $('.cont img').on('click', function(e){
         transform:'translate(-50%,-50%)',
     })
     .append(`<img src="${src}" alt="${alt}"></a>`)
-    .append('<button class="close"><i class="fas fa-times-circle"></i></button>')
+    // .append('<button class="close"><i class="fas fa-times-circle"></i></button>')
     .append('<button class="arrow prev"><i class="fas fa-angle-left"></i></button><button class="arrow next"><i class="fas fa-angle-right"></i></button>')
-    $('.inbox .close').css({
-        position:'absolute', top:'-20px', right:'-20px',
-        background:'none', border:'none', fontSize:'40px', color:'#fff'
-    })
+    // $('.inbox .close').css({
+    //     position:'absolute', top:'-20px', right:'-20px',
+    //     background:'none', border:'none', fontSize:'40px', color:'#fff'
+    // })
     $('.inbox .prev').css({
-        position:'absolute', top:'50%', left:'50%', marginLeft:'-330px', marginTop:'-20px',
-        background:'none', border:'none', fontSize:'40px', color:'#fff'
+        position:'absolute', top:'50%', left:'50%', marginLeft:'-630px', marginTop:'-20px',
+        background:'none', border:'none', fontSize:'50px', color:'#fff'
     })
     $('.inbox .next').css({
-        position:'absolute', top:'50%', right:'50%', marginRight:'-330px', marginTop:'-20px',
-        background:'none', border:'none', fontSize:'40px', color:'#fff'
+        position:'absolute', top:'50%', right:'50%', marginRight:'-630px', marginTop:'-20px',
+        background:'none', border:'none', fontSize:'50px', color:'#fff'
     })
 })
 
@@ -201,31 +241,54 @@ $('body').on('click', '.inbox', function(e){
     e.stopPropagation()
 })
 
-function cont (indexnum){
-    var src = $('.cont img').eq(indexnum).attr('src')
-    var alt = $('.cont img').eq(indexnum).attr('alt')
-    $('.inbox').find('a').attr({href:href})
-    $('.inbox').find('img').attr({
-        src:src,
-        alt:alt
-    })
+function cont (indexnum, fcname, btn){
+    if (btn==='다음') {
+        indexnum++          // 다음버튼이면 인덱스번호 1 증가
+    } else {
+        indexnum--          // 이전버튼이면 인덱스번호 1 감소
+    }
+    if (indexnum===$('.cont img').length) {     // 인덱스번호가 이미지 갯수와 같아지면 0로 초기화
+        indexnum = 0        
+    } else if (indexnum<0) {
+        indexnum = $('.cont img').length -1     // 인덱스번호가 0보다 작으면 최대값으로 초기화
+    }
+    if (!cflag) {                               // cflag가 false이면 all(전체)를 클릭한 경우, 128줄, 134~138 참고
+        let src = $('.cont img').eq(indexnum).attr('src')
+        let alt = $('.cont img').eq(indexnum).attr('alt')
+            // $('.inbox').find('a').attr({href:href})
+            $('.inbox').find('img').attr({
+                src:src,
+                alt:alt
+            })
+            imgnum = indexnum
+    } else {                                                         // cflag가 false가 아니면
+        var indexClass = $('.cont img').eq(indexnum).attr('class')   // class스명을 추출해서
+        indexClass = indexClass.substr(4,1)                          // 4번째에서 1글자를 추출함
+        if (fcname===indexClass){                                    // 추출한 클래스가 클릭한 이미지의 클래스와 같연 경우
+            let src = $('.cont img').eq(indexnum).attr('src')
+            let alt = $('.cont img').eq(indexnum).attr('alt')
+            $('.inbox').find('a').attr({href:href})
+            $('.inbox').find('img').attr({
+                src:src,
+                alt:alt
+            })
+            imgnum = indexnum
+        } else {
+            cont(indexnum, fcname, btn)
+        }
+    }
 }
 
 $('body').on('click', '.inbox .next', function(){
-    imgnum++
-    if (imgnum === $('.cont img').length) {
-        imgnum = 0
-    }
-    cont(imgnum)
+    cont(imgnum, cname, '다음')
+    // 다음 버튼을 클릭할때 현재 팝업된 이미지의 인덱스번호, 클래스명, '다음' 세 값을 전달함
 })
 
 $('body').on('click', '.inbox .prev', function(){
-    imgnum--
-    if (imgnum<0) {
-        imgnum = 7
-    }
-    cont(imgnum)
+    cont(imgnum, cname, '이전')
+    // 이전 버튼을 클릭할때 현재 팝업된 이미지의 인덱스번호, 클래스명, '이전' 세 값을 전달함
 })
+
 
 
 // 미로
